@@ -1,1 +1,2 @@
-# Discrod-Weather-Bot
+# weatherBot
+ 
