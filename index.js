@@ -1,10 +1,24 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { createConnection } = require('mysql');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
+//Database code
+
+let con = createConnection(config.mysql);
+
+con.connect(err => {
+
+    if (err) return console.log(err);
+
+    console.log(`MySQL has been connected!`);
+});
+
+
 
 client.commands = new Collection();
 
